@@ -130,7 +130,7 @@ def minimum_distance(a, start, end):
     for i in range(start, end+1):
         if abs(a[i][0] - a[mid][0]) <= d:
             points.append(a[i])
-    points = sorted(points, key=lambda x: x[1])  #按y轴坐标排序，方便向后查找6个点。因为x轴间距已经固定，最小值肯定出在y轴间隔较近的点
+    points = sorted(points, key=lambda x: x[1])  #按y轴坐标排序，方便向后查找6个点。因为按上面分析，候选区域是一个矩形，且y坐标的间隔小于等于d，所以最小值肯定出在y轴间隔较近的点
 
     if len(points) < 2:
         return d
